@@ -1,13 +1,13 @@
-import { SmallPokemon } from "../interfaces/pokemon-list"
-import { Card, Grid, Row, Text } from "@nextui-org/react"
-import { FC } from "react"
-import { useRouter } from "next/router"
+import { SmallPokemon } from '../interfaces/pokemon-list'
+import { Card, Grid, Row, Text } from '@nextui-org/react'
+import { FC } from 'react'
+import { useRouter } from 'next/router'
 
 interface Props {
   pokemon: SmallPokemon
 }
 export const PokemonCard: FC<Props> = ({ pokemon }) => {
-  const { id, img, name } = pokemon;
+  const { id, img, name } = pokemon
   
   const router = useRouter()
 
@@ -38,5 +38,5 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
         </Card.Footer>
       </Card>
     </Grid>
-  );
-};
+  )
+}

@@ -12,7 +12,6 @@ export const NoFavorites = () => {
           height={250}
           style={{opacity: 0.1 }}
         />
-
       </Container>
   )
 }

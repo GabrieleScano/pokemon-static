@@ -1,10 +1,9 @@
-import NextLink from 'next/link'
-import { Spacer, Text, useTheme, Link} from '@nextui-org/react'
+import NextLink from "next/link";
+import { Spacer, Text, useTheme, Link } from '@nextui-org/react'
 import Image from 'next/image'
 
 export const Navbar = () => {
-
-    const { theme } = useTheme()
+  const { theme } = useTheme()
   return (
     <div
       style={{
@@ -36,11 +35,15 @@ export const Navbar = () => {
       <Spacer css={{ flex: 1 }} />
       <NextLink href="/favorites" passHref>
         <Link>
-          <Text style={{marginRight: '25px'}} color="white" h3>
+          <Text
+            style={{ marginRight: "25px", marginTop: "7px" }}
+            color="white"
+            h3
+          >
             Favorites
           </Text>
         </Link>
       </NextLink>
     </div>
-  );
+  )
 }

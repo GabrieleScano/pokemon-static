@@ -24,14 +24,13 @@ const PokemonPage: NextPage<Props> = ({pokemon}) => {
         particleCount: 100,
         spread: 360,
         origin: {
-          x: 0.5,
-          y: 0.1,
+          x: 1,
+          y: 0.1
         },
       })
     }
   }
   
-
   return (
     <Layout title={pokemon.name}>
       <Grid.Container gap={2} justify="flex-start">
@@ -117,10 +116,16 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   
   const { id } = params as { id: string }
   const { data } = await pokeApi.get<Pokemon>(`/pokemon/${id}`)
+
+  const pokemon = {
+    id: data.id,
+    name: data.name,
+    sprites: data.sprites
+}
   
   return {
     props: {
-      pokemon: data
+      pokemon
     },
   }
 }

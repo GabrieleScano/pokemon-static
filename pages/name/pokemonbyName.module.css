@@ -1,0 +1,14 @@
+.card {
+    padding: 30px;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .card_header {
+        flex-direction: column;
+    }
+  }

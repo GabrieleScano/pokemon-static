@@ -6,7 +6,7 @@ import pokeApi from '../../api/pokeApi'
 import { Pokemon } from '../../interfaces/pokemon-full'
 import { localFavorites } from '../../utils'
 import { Layout } from '../../components/layouts/Layout'
-import styles from './pokemonByName.module.css'
+import styles from './name.module.css'
 import { PokemonListResponse } from '../../interfaces/pokemon-list'
 import { getPokemonInfo } from '../../utils/getPokemonInfo'
 

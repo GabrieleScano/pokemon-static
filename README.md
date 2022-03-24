@@ -1,3 +1,10 @@
+Nextjs + NextUi 
+
+Show Pokemons and save them to favorites
+
+Try the [DEMO](https://pokemon-static-51y3pg1mr-gabrielescano.vercel.app/)
+ 
+_____
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

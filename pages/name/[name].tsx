@@ -1,14 +1,14 @@
+import { useState } from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { Grid, Card, Text, Button, Container, Image } from '@nextui-org/react'
+import confetti from 'canvas-confetti'
 import pokeApi from '../../api/pokeApi'
 import { Pokemon } from '../../interfaces/pokemon-full'
-import { useState } from 'react';
-import { localFavorites } from '../../utils';
-import confetti from 'canvas-confetti';
-import { Layout } from '../../components/layouts/Layout';
-import { Grid, Card, Text, Button, Container, Image } from '@nextui-org/react';
-
-import styles from './pokemonByName.module.css';
-import { PokemonListResponse } from '../../interfaces/pokemon-list';
+import { localFavorites } from '../../utils'
+import { Layout } from '../../components/layouts/Layout'
+import styles from './pokemonByName.module.css'
+import { PokemonListResponse } from '../../interfaces/pokemon-list'
+import { getPokemonInfo } from '../../utils/getPokemonInfo'
 
 interface Props{
     pokemon: Pokemon
@@ -118,17 +118,10 @@ const PokemonByNamePage: NextPage<Props> = ({pokemon}) => {
   export const getStaticProps: GetStaticProps = async ({params}) => {
     
     const { name } = params as { name: string }
-    const { data } = await pokeApi.get<Pokemon>(`/pokemon/${name}`)
-    
-    const pokemon = {
-        id: data.id,
-        name: data.name,
-        sprites: data.sprites
-    }
-    
+
     return {
       props: {
-        pokemon
+        pokemon: await getPokemonInfo(name)
       },
     }
   }

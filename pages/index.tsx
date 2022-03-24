@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { GetStaticProps } from 'next'
-import { Grid} from '@nextui-org/react'
+import { Grid } from '@nextui-org/react'
 import { Layout } from '../components/layouts/Layout'
 import pokeApi from '../api/pokeApi'
 import { PokemonListResponse, SmallPokemon } from '../interfaces/pokemon-list'
